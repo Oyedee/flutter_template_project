@@ -14,7 +14,7 @@ final loggerServiceProvider = Provider<LoggerService>((ref) => LoggerService());
 
 final storageServiceProvider = Provider<StorageService>((_) => HiveStorageService());
 
-final dioServiceProvider = Provider<DioService>((ref) => DioService(ref));
+final dioServiceProvider = Provider<DioService>((ref) => DioService(ref: ref));
 
 final deviceInfoServiceProvider = Provider<DeviceInfoService>((ref) => DeviceInfoService());
 

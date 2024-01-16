@@ -20,9 +20,9 @@ enum HttpMethod {
 }
 
 class DioService {
-  DioService(this.ref) {
+  DioService({required this.ref, String? baseUrl}) {
     dio = Dio();
-    dio.options.baseUrl = AppEndpoints.movieDbBase;
+    dio.options.baseUrl = baseUrl ?? AppEndpoints.movieDbBase;
     dio.options.sendTimeout = const Duration(seconds: 30);
     dio.options.connectTimeout = const Duration(seconds: 30);
     dio.options.receiveTimeout = const Duration(seconds: 30);
