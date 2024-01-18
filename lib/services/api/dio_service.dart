@@ -72,7 +72,7 @@ class DioService {
                 data: error.response?.data ??
                     {
                       'message': 'Forbidden: You do not have access to this resource',
-                      'code': 403,
+                      'response_code': 403,
                     }),
           );
         } else {
