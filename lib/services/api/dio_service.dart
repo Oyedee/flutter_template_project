@@ -53,7 +53,7 @@ class DioService {
                 statusCode: 403,
                 data: response.data ??
                     {
-                      'message': 'Something went wrong, please try again later or contact support',
+                      'response_description': 'Something went wrong, please try again later or contact support',
                     }),
           );
         } else {
@@ -71,7 +71,7 @@ class DioService {
                 statusCode: 403,
                 data: error.response?.data ??
                     {
-                      'message': 'Forbidden: You do not have access to this resource',
+                      'response_description': 'Forbidden: You do not have access to this resource',
                       'response_code': 403,
                     }),
           );

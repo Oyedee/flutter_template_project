@@ -1,4 +1,4 @@
-package agency.cinnamon.flutter_template
+package com.onafriq.android
 
 import io.flutter.embedding.android.FlutterActivity
 
