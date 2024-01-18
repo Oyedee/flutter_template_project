@@ -4,9 +4,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../features/detail/pages/detail_page.dart';
+import '../features/home/models/detail_page_args.dart';
 import '../features/home/models/movie/movie.dart';
 import '../features/home/pages/home_page.dart';
-import '../models/detail_page_args.dart';
 import '../utils/not_found_page.dart';
 import 'route_names.dart';
 import 'route_paths.dart';

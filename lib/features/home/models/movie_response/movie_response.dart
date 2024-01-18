@@ -8,8 +8,8 @@ part 'movie_response.g.dart';
 @freezed
 class MovieResponse with _$MovieResponse {
   factory MovieResponse({
-    required int page,
-    @JsonKey(name: 'total_pages') required int totalPages,
+    @JsonKey(name: 'page', includeIfNull: true) required int page,
+    @JsonKey(name: 'total_pages', includeIfNull: true) required int totalPages,
     @JsonKey(name: 'results') required List<Movie> movies,
   }) = _MovieResponse;
 
