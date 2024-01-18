@@ -1,7 +1,7 @@
-# Flutter project Template
+# Baxi 3.0
 ## **Table of Contents**
 
-- [Flutter Riverpod App Template](#flutter-riverpod-app-template)
+- [Baxi 3.0](#baxi-30)
 - [Architecture structure](#architecture-structure)
   * [Presentation](#presentation)
     + [Widgets](#widgets)
@@ -21,8 +21,8 @@
 - [How to use](#how-to-use)
 
 
-# Flutter Riverpod App Template
-This project has everything you need to start a Flutter project with Riverpod as the state management tool.
+# Baxi 3.0
+Baxi mobile app 3.0 is a new version of Baxi mobile app, built with Flutter.
 
 # Architecture structure
 This template is built with architecture that consists of four main layers: Presentation (UI), Service, Domain (Models, DTOs)

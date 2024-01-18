@@ -44,6 +44,9 @@ Future<void> main() async {
   //   options: DefaultFirebaseOptions.currentPlatform,
   // );
 
+  // whenever your initialization is completed, remove the splash screen:
+  // FlutterNativeSplash.remove();
+
   /// Run the `FlutterTemplateApp` app
   runApp(
     ProviderScope(

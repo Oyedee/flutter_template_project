@@ -20,8 +20,9 @@ MovieResponse _$MovieResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieResponse {
-  int get page => throw _privateConstructorUsedError;
-  @JsonKey(name: 'total_pages')
+  @JsonKey(name: 'page', includeIfNull: true)
+  int? get page => throw _privateConstructorUsedError;
+  @JsonKey(name: 'total_pages', includeIfNull: true)
   int get totalPages => throw _privateConstructorUsedError;
   @JsonKey(name: 'results')
   List<Movie> get movies => throw _privateConstructorUsedError;
@@ -39,8 +40,8 @@ abstract class $MovieResponseCopyWith<$Res> {
       _$MovieResponseCopyWithImpl<$Res, MovieResponse>;
   @useResult
   $Res call(
-      {int page,
-      @JsonKey(name: 'total_pages') int totalPages,
+      {@JsonKey(name: 'page', includeIfNull: true) int? page,
+      @JsonKey(name: 'total_pages', includeIfNull: true) int totalPages,
       @JsonKey(name: 'results') List<Movie> movies});
 }
 
@@ -57,15 +58,15 @@ class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? page = null,
+    Object? page = freezed,
     Object? totalPages = null,
     Object? movies = null,
   }) {
     return _then(_value.copyWith(
-      page: null == page
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       totalPages: null == totalPages
           ? _value.totalPages
           : totalPages // ignore: cast_nullable_to_non_nullable
@@ -87,8 +88,8 @@ abstract class _$$MovieResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int page,
-      @JsonKey(name: 'total_pages') int totalPages,
+      {@JsonKey(name: 'page', includeIfNull: true) int? page,
+      @JsonKey(name: 'total_pages', includeIfNull: true) int totalPages,
       @JsonKey(name: 'results') List<Movie> movies});
 }
 
@@ -103,15 +104,15 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? page = null,
+    Object? page = freezed,
     Object? totalPages = null,
     Object? movies = null,
   }) {
     return _then(_$MovieResponseImpl(
-      page: null == page
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       totalPages: null == totalPages
           ? _value.totalPages
           : totalPages // ignore: cast_nullable_to_non_nullable
@@ -128,8 +129,9 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieResponseImpl implements _MovieResponse {
   _$MovieResponseImpl(
-      {required this.page,
-      @JsonKey(name: 'total_pages') required this.totalPages,
+      {@JsonKey(name: 'page', includeIfNull: true) required this.page,
+      @JsonKey(name: 'total_pages', includeIfNull: true)
+      required this.totalPages,
       @JsonKey(name: 'results') required final List<Movie> movies})
       : _movies = movies;
 
@@ -137,9 +139,10 @@ class _$MovieResponseImpl implements _MovieResponse {
       _$$MovieResponseImplFromJson(json);
 
   @override
-  final int page;
+  @JsonKey(name: 'page', includeIfNull: true)
+  final int? page;
   @override
-  @JsonKey(name: 'total_pages')
+  @JsonKey(name: 'total_pages', includeIfNull: true)
   final int totalPages;
   final List<Movie> _movies;
   @override
@@ -187,8 +190,9 @@ class _$MovieResponseImpl implements _MovieResponse {
 
 abstract class _MovieResponse implements MovieResponse {
   factory _MovieResponse(
-          {required final int page,
-          @JsonKey(name: 'total_pages') required final int totalPages,
+          {@JsonKey(name: 'page', includeIfNull: true) required final int? page,
+          @JsonKey(name: 'total_pages', includeIfNull: true)
+          required final int totalPages,
           @JsonKey(name: 'results') required final List<Movie> movies}) =
       _$MovieResponseImpl;
 
@@ -196,9 +200,10 @@ abstract class _MovieResponse implements MovieResponse {
       _$MovieResponseImpl.fromJson;
 
   @override
-  int get page;
+  @JsonKey(name: 'page', includeIfNull: true)
+  int? get page;
   @override
-  @JsonKey(name: 'total_pages')
+  @JsonKey(name: 'total_pages', includeIfNull: true)
   int get totalPages;
   @override
   @JsonKey(name: 'results')

@@ -8,7 +8,7 @@ part of 'movie_response.dart';
 
 _$MovieResponseImpl _$$MovieResponseImplFromJson(Map<String, dynamic> json) =>
     _$MovieResponseImpl(
-      page: json['page'] as int,
+      page: json['page'] as int?,
       totalPages: json['total_pages'] as int,
       movies: (json['results'] as List<dynamic>)
           .map((e) => Movie.fromJson(e as Map<String, dynamic>))
