@@ -42,7 +42,7 @@ class MovieWidget extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              movie.title,
+              movie.title ?? '',
               maxLines: 1,
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,

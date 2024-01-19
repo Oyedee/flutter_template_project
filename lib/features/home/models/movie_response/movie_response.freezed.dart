@@ -20,12 +20,12 @@ MovieResponse _$MovieResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieResponse {
-  @JsonKey(name: 'page', includeIfNull: true)
-  int? get page => throw _privateConstructorUsedError;
-  @JsonKey(name: 'total_pages', includeIfNull: true)
-  int get totalPages => throw _privateConstructorUsedError;
   @JsonKey(name: 'results')
-  List<Movie> get movies => throw _privateConstructorUsedError;
+  List<Movie>? get movies => throw _privateConstructorUsedError;
+  @JsonKey(name: 'page')
+  int? get page => throw _privateConstructorUsedError;
+  @JsonKey(name: 'total_pages')
+  int? get totalPages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,9 +40,9 @@ abstract class $MovieResponseCopyWith<$Res> {
       _$MovieResponseCopyWithImpl<$Res, MovieResponse>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'page', includeIfNull: true) int? page,
-      @JsonKey(name: 'total_pages', includeIfNull: true) int totalPages,
-      @JsonKey(name: 'results') List<Movie> movies});
+      {@JsonKey(name: 'results') List<Movie>? movies,
+      @JsonKey(name: 'page') int? page,
+      @JsonKey(name: 'total_pages') int? totalPages});
 }
 
 /// @nodoc
@@ -58,23 +58,23 @@ class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? movies = freezed,
     Object? page = freezed,
-    Object? totalPages = null,
-    Object? movies = null,
+    Object? totalPages = freezed,
   }) {
     return _then(_value.copyWith(
+      movies: freezed == movies
+          ? _value.movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>?,
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
-      totalPages: null == totalPages
+      totalPages: freezed == totalPages
           ? _value.totalPages
           : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
-      movies: null == movies
-          ? _value.movies
-          : movies // ignore: cast_nullable_to_non_nullable
-              as List<Movie>,
+              as int?,
     ) as $Val);
   }
 }
@@ -88,9 +88,9 @@ abstract class _$$MovieResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'page', includeIfNull: true) int? page,
-      @JsonKey(name: 'total_pages', includeIfNull: true) int totalPages,
-      @JsonKey(name: 'results') List<Movie> movies});
+      {@JsonKey(name: 'results') List<Movie>? movies,
+      @JsonKey(name: 'page') int? page,
+      @JsonKey(name: 'total_pages') int? totalPages});
 }
 
 /// @nodoc
@@ -104,23 +104,23 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? movies = freezed,
     Object? page = freezed,
-    Object? totalPages = null,
-    Object? movies = null,
+    Object? totalPages = freezed,
   }) {
     return _then(_$MovieResponseImpl(
+      movies: freezed == movies
+          ? _value._movies
+          : movies // ignore: cast_nullable_to_non_nullable
+              as List<Movie>?,
       page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
               as int?,
-      totalPages: null == totalPages
+      totalPages: freezed == totalPages
           ? _value.totalPages
           : totalPages // ignore: cast_nullable_to_non_nullable
-              as int,
-      movies: null == movies
-          ? _value._movies
-          : movies // ignore: cast_nullable_to_non_nullable
-              as List<Movie>,
+              as int?,
     ));
   }
 }
@@ -129,33 +129,35 @@ class __$$MovieResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieResponseImpl implements _MovieResponse {
   _$MovieResponseImpl(
-      {@JsonKey(name: 'page', includeIfNull: true) required this.page,
-      @JsonKey(name: 'total_pages', includeIfNull: true)
-      required this.totalPages,
-      @JsonKey(name: 'results') required final List<Movie> movies})
+      {@JsonKey(name: 'results') final List<Movie>? movies = const <Movie>[],
+      @JsonKey(name: 'page') this.page = 0,
+      @JsonKey(name: 'total_pages') this.totalPages = 0})
       : _movies = movies;
 
   factory _$MovieResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieResponseImplFromJson(json);
 
-  @override
-  @JsonKey(name: 'page', includeIfNull: true)
-  final int? page;
-  @override
-  @JsonKey(name: 'total_pages', includeIfNull: true)
-  final int totalPages;
-  final List<Movie> _movies;
+  final List<Movie>? _movies;
   @override
   @JsonKey(name: 'results')
-  List<Movie> get movies {
+  List<Movie>? get movies {
+    final value = _movies;
+    if (value == null) return null;
     if (_movies is EqualUnmodifiableListView) return _movies;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_movies);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
+  @JsonKey(name: 'page')
+  final int? page;
+  @override
+  @JsonKey(name: 'total_pages')
+  final int? totalPages;
+
+  @override
   String toString() {
-    return 'MovieResponse(page: $page, totalPages: $totalPages, movies: $movies)';
+    return 'MovieResponse(movies: $movies, page: $page, totalPages: $totalPages)';
   }
 
   @override
@@ -163,16 +165,16 @@ class _$MovieResponseImpl implements _MovieResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieResponseImpl &&
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.totalPages, totalPages) ||
-                other.totalPages == totalPages) &&
-            const DeepCollectionEquality().equals(other._movies, _movies));
+                other.totalPages == totalPages));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, page, totalPages,
-      const DeepCollectionEquality().hash(_movies));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_movies), page, totalPages);
 
   @JsonKey(ignore: true)
   @override
@@ -190,24 +192,23 @@ class _$MovieResponseImpl implements _MovieResponse {
 
 abstract class _MovieResponse implements MovieResponse {
   factory _MovieResponse(
-          {@JsonKey(name: 'page', includeIfNull: true) required final int? page,
-          @JsonKey(name: 'total_pages', includeIfNull: true)
-          required final int totalPages,
-          @JsonKey(name: 'results') required final List<Movie> movies}) =
+          {@JsonKey(name: 'results') final List<Movie>? movies,
+          @JsonKey(name: 'page') final int? page,
+          @JsonKey(name: 'total_pages') final int? totalPages}) =
       _$MovieResponseImpl;
 
   factory _MovieResponse.fromJson(Map<String, dynamic> json) =
       _$MovieResponseImpl.fromJson;
 
   @override
-  @JsonKey(name: 'page', includeIfNull: true)
+  @JsonKey(name: 'results')
+  List<Movie>? get movies;
+  @override
+  @JsonKey(name: 'page')
   int? get page;
   @override
-  @JsonKey(name: 'total_pages', includeIfNull: true)
-  int get totalPages;
-  @override
-  @JsonKey(name: 'results')
-  List<Movie> get movies;
+  @JsonKey(name: 'total_pages')
+  int? get totalPages;
   @override
   @JsonKey(ignore: true)
   _$$MovieResponseImplCopyWith<_$MovieResponseImpl> get copyWith =>

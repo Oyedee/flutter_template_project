@@ -8,9 +8,9 @@ part 'movie_response.g.dart';
 @freezed
 class MovieResponse with _$MovieResponse {
   factory MovieResponse({
-    @JsonKey(name: 'page', includeIfNull: true) required int? page,
-    @JsonKey(name: 'total_pages', includeIfNull: true) required int totalPages,
-    @JsonKey(name: 'results') required List<Movie> movies,
+    @JsonKey(name: 'results') @Default(<Movie>[]) List<Movie>? movies,
+    @JsonKey(name: 'page') @Default(0) int? page,
+    @JsonKey(name: 'total_pages') @Default(0) int? totalPages,
   }) = _MovieResponse;
 
   factory MovieResponse.fromJson(Map<String, dynamic> json) => _$MovieResponseFromJson(json);

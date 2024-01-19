@@ -21,15 +21,15 @@ Movie _$MovieFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Movie {
   @JsonKey(name: 'id')
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'title')
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
   @JsonKey(name: 'vote_average')
-  double get rating => throw _privateConstructorUsedError;
+  double? get rating => throw _privateConstructorUsedError;
   @JsonKey(name: 'overview')
-  String get overview => throw _privateConstructorUsedError;
+  String? get overview => throw _privateConstructorUsedError;
   @JsonKey(name: 'release_date')
-  String get releaseDate => throw _privateConstructorUsedError;
+  String? get releaseDate => throw _privateConstructorUsedError;
   @JsonKey(name: 'poster_path')
   String? get poster => throw _privateConstructorUsedError;
 
@@ -44,11 +44,11 @@ abstract class $MovieCopyWith<$Res> {
       _$MovieCopyWithImpl<$Res, Movie>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'vote_average') double rating,
-      @JsonKey(name: 'overview') String overview,
-      @JsonKey(name: 'release_date') String releaseDate,
+      {@JsonKey(name: 'id') int? id,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'vote_average') double? rating,
+      @JsonKey(name: 'overview') String? overview,
+      @JsonKey(name: 'release_date') String? releaseDate,
       @JsonKey(name: 'poster_path') String? poster});
 }
 
@@ -65,34 +65,34 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? rating = null,
-    Object? overview = null,
-    Object? releaseDate = null,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? rating = freezed,
+    Object? overview = freezed,
+    Object? releaseDate = freezed,
     Object? poster = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
+              as int?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      rating: null == rating
+              as String?,
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      overview: null == overview
+              as double?,
+      overview: freezed == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
-              as String,
-      releaseDate: null == releaseDate
+              as String?,
+      releaseDate: freezed == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       poster: freezed == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -109,11 +109,11 @@ abstract class _$$MovieImplCopyWith<$Res> implements $MovieCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int id,
-      @JsonKey(name: 'title') String title,
-      @JsonKey(name: 'vote_average') double rating,
-      @JsonKey(name: 'overview') String overview,
-      @JsonKey(name: 'release_date') String releaseDate,
+      {@JsonKey(name: 'id') int? id,
+      @JsonKey(name: 'title') String? title,
+      @JsonKey(name: 'vote_average') double? rating,
+      @JsonKey(name: 'overview') String? overview,
+      @JsonKey(name: 'release_date') String? releaseDate,
       @JsonKey(name: 'poster_path') String? poster});
 }
 
@@ -128,34 +128,34 @@ class __$$MovieImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? title = null,
-    Object? rating = null,
-    Object? overview = null,
-    Object? releaseDate = null,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? rating = freezed,
+    Object? overview = freezed,
+    Object? releaseDate = freezed,
     Object? poster = freezed,
   }) {
     return _then(_$MovieImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
-      title: null == title
+              as int?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      rating: null == rating
+              as String?,
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      overview: null == overview
+              as double?,
+      overview: freezed == overview
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
-              as String,
-      releaseDate: null == releaseDate
+              as String?,
+      releaseDate: freezed == releaseDate
           ? _value.releaseDate
           : releaseDate // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       poster: freezed == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
@@ -168,31 +168,31 @@ class __$$MovieImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MovieImpl implements _Movie {
   _$MovieImpl(
-      {@JsonKey(name: 'id') required this.id,
-      @JsonKey(name: 'title') required this.title,
-      @JsonKey(name: 'vote_average') required this.rating,
-      @JsonKey(name: 'overview') required this.overview,
-      @JsonKey(name: 'release_date') required this.releaseDate,
-      @JsonKey(name: 'poster_path') this.poster});
+      {@JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'title') this.title = '',
+      @JsonKey(name: 'vote_average') this.rating = 0,
+      @JsonKey(name: 'overview') this.overview = '',
+      @JsonKey(name: 'release_date') this.releaseDate = '',
+      @JsonKey(name: 'poster_path') this.poster = ''});
 
   factory _$MovieImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieImplFromJson(json);
 
   @override
   @JsonKey(name: 'id')
-  final int id;
+  final int? id;
   @override
   @JsonKey(name: 'title')
-  final String title;
+  final String? title;
   @override
   @JsonKey(name: 'vote_average')
-  final double rating;
+  final double? rating;
   @override
   @JsonKey(name: 'overview')
-  final String overview;
+  final String? overview;
   @override
   @JsonKey(name: 'release_date')
-  final String releaseDate;
+  final String? releaseDate;
   @override
   @JsonKey(name: 'poster_path')
   final String? poster;
@@ -238,30 +238,30 @@ class _$MovieImpl implements _Movie {
 
 abstract class _Movie implements Movie {
   factory _Movie(
-      {@JsonKey(name: 'id') required final int id,
-      @JsonKey(name: 'title') required final String title,
-      @JsonKey(name: 'vote_average') required final double rating,
-      @JsonKey(name: 'overview') required final String overview,
-      @JsonKey(name: 'release_date') required final String releaseDate,
+      {@JsonKey(name: 'id') final int? id,
+      @JsonKey(name: 'title') final String? title,
+      @JsonKey(name: 'vote_average') final double? rating,
+      @JsonKey(name: 'overview') final String? overview,
+      @JsonKey(name: 'release_date') final String? releaseDate,
       @JsonKey(name: 'poster_path') final String? poster}) = _$MovieImpl;
 
   factory _Movie.fromJson(Map<String, dynamic> json) = _$MovieImpl.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  int get id;
+  int? get id;
   @override
   @JsonKey(name: 'title')
-  String get title;
+  String? get title;
   @override
   @JsonKey(name: 'vote_average')
-  double get rating;
+  double? get rating;
   @override
   @JsonKey(name: 'overview')
-  String get overview;
+  String? get overview;
   @override
   @JsonKey(name: 'release_date')
-  String get releaseDate;
+  String? get releaseDate;
   @override
   @JsonKey(name: 'poster_path')
   String? get poster;

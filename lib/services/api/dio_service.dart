@@ -50,7 +50,7 @@ class DioService {
           handler.resolve(
             Response(
                 requestOptions: response.requestOptions,
-                statusCode: 403,
+                statusCode: 401,
                 data: response.data ??
                     {
                       'response_description': 'Something went wrong, please try again later or contact support',

@@ -31,10 +31,10 @@ class HomeController extends StateNotifier<AsyncValue<List<Movie>>> {
       );
 
       /// Set total pages
-      ref.read(totalPagesProvider.notifier).state = movieData.totalPages;
+      ref.read(totalPagesProvider.notifier).state = movieData.totalPages!;
 
       /// Return list of movies
-      return movieData.movies;
+      return movieData.movies ?? [];
     });
   }
 }
